@@ -1,0 +1,110 @@
+USER = aialferov
+PROJECT = {{name}}
+
+VERSION = $(shell cat src/$(PROJECT).app.src | grep vsn | cut -d\" -f2)
+GIT_SHA = $(shell git rev-parse HEAD | cut -c1-8)
+
+REBAR = $(shell which ./rebar3 || which rebar3)
+
+PREFIX = usr/local
+
+BIN_DIR = bin
+BIN_PATH = $(DEST_DIR)/$(PREFIX)/$(BIN_DIR)
+BIN_PATH_IN = $(shell $(REBAR) path --bin)
+
+BUILD_DIR = _build
+BUILD_DIR_IMAGE = $(BUILD_DIR)/image
+
+all:
+	$(REBAR) compile
+	$(REBAR) unlock
+
+check:
+	$(REBAR) eunit
+
+clean:
+	$(REBAR) clean -a
+	$(REBAR) unlock
+
+install:
+	mkdir -p $(BIN_PATH)
+	install -p $(BIN_PATH_IN)/$(PROJECT) $(BIN_PATH)
+
+uninstall:
+	rm -f $(BIN_PATH)/$(PROJECT)
+	rmdir -p $(BIN_PATH) 2> /dev/null || true
+
+shell:
+	$(REBAR) shell
+	$(REBAR) unlock
+
+upgrade:
+	$(REBAR) upgrade
+	$(REBAR) unlock
+
+run: epmd-run
+	$(BIN_PATH_IN)/$(PROJECT) run
+
+join:
+	erl \
+		-start_epmd false \
+		-remsh $(PROJECT)@localhost \
+		-sname $(PROJECT)-$$RANDOM \
+		-setcookie $(PROJECT)
+
+epmd-run:
+	epmd -daemon
+
+git-release:
+	git tag -a $(VERSION)
+	git push origin $(VERSION)
+
+docker-build: all
+	$(MAKE) install DEST_DIR=$(BUILD_DIR_IMAGE) PREFIX=
+	install -p -m 644 Dockerfile $(BUILD_DIR_IMAGE)
+	docker build $(BUILD_DIR_IMAGE) -t $(USER)/$(PROJECT):$(VERSION)
+	docker tag $(USER)/$(PROJECT):$(VERSION) $(USER)/$(PROJECT):edge
+
+docker-push:
+	docker push $(USER)/$(PROJECT):$(VERSION)
+	docker push $(USER)/$(PROJECT):edge
+
+docker-release:
+	docker tag $(USER)/$(PROJECT):$(VERSION) $(USER)/$(PROJECT):latest
+	docker push $(USER)/$(PROJECT):latest
+
+docker-run:
+	docker run \
+		--rm -it \
+		--name $(PROJECT) \
+		-v ${PWD}/priv:/etc/$(PROJECT) \
+		$(USER)/$(PROJECT):$(VERSION) run
+
+docker-start:
+	docker run \
+		--rm -itd \
+		--name $(PROJECT) \
+		-v ${PWD}/priv:/etc/$(PROJECT) \
+		$(USER)/$(PROJECT):$(VERSION) run
+
+docker-stop:
+	docker stop $(PROJECT)
+
+docker-shell:
+	docker exec -it $(PROJECT) sh
+
+docker-attach:
+	docker attach $(PROJECT)
+
+docker-logs:
+	docker logs -f $(PROJECT)
+
+docker-clean:
+	rm -f $(BUILD_DIR_IMAGE)/Dockerfile
+	$(MAKE) uninstall DEST_DIR=$(BUILD_DIR_IMAGE) PREFIX=
+
+distclean: clean docker-clean
+	rm -rf $(BUILD_DIR)
+
+version:
+	@echo "Version $(VERSION) (git-$(GIT_SHA))"

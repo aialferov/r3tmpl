@@ -1,0 +1,7 @@
+{application, {{name}}, [
+    {description, "Command line tool description"},
+    {id, "{{name}}"},
+    {vsn, "0.1.0"},
+    {modules, []},
+    {applications, [kernel, stdlib]}
+]}.
