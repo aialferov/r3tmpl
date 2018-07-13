@@ -40,6 +40,39 @@ The following types are supported:
 
 A project will be given a specified name.
 
+Example:
+
+```
+$ rebar3 new aacli mycli
+===> Writing mycli/rebar3
+===> Writing mycli/rebar.config
+===> Writing mycli/Makefile
+===> Writing mycli/Dockerfile
+===> Writing mycli/README.md
+===> Writing mycli/src/mycli.erl
+===> Writing mycli/src/mycli_test.erl
+===> Writing mycli/src/mycli.app.src
+===> Writing mycli/src/mycli.app.src.script
+===> Writing mycli/priv/mycli.config
+
+$ tree mycli
+mycli
+├── Dockerfile
+├── Makefile
+├── README.md
+├── priv
+│   └── mycli.config
+├── rebar.config
+├── rebar3
+└── src
+    ├── mycli.app.src
+    ├── mycli.app.src.script
+    ├── mycli.erl
+    └── mycli_test.erl
+
+2 directories, 10 files
+```
+
 <!-- Links -->
 [MIT]: https://opensource.org/licenses/MIT
 [Rebar3]: https://www.rebar3.org
