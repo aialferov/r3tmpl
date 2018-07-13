@@ -1,4 +1,4 @@
--module({{name}}_test).
+-module('{{name}}_test').
 
 -include_lib("eunit/include/eunit.hrl").
 
