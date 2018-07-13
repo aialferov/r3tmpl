@@ -1,5 +1,7 @@
 # Rebar3 Templates
 
+[![License: MIT][MIT badge]][MIT]
+
 Provides [Rebar3 Templates] for creating Erlang bases project structures.
 
 ## Install
@@ -39,6 +41,9 @@ The following types are supported:
 A project will be given a specified name.
 
 <!-- Links -->
-
+[MIT]: https://opensource.org/licenses/MIT
 [Rebar3]: https://www.rebar3.org
 [Rebar3 Templates]: https://www.rebar3.org/docs/using-templates
+
+<!-- Badges -->
+[MIT badge]: https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
