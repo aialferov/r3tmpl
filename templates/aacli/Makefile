@@ -103,6 +103,9 @@ docker-attach:
 	docker attach $(PROJECT)
 
 docker-logs:
+	docker logs $(PROJECT)
+
+docker-logs-f:
 	docker logs -f $(PROJECT)
 
 docker-clean:
