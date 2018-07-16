@@ -40,7 +40,9 @@ The following types are supported:
 
 A project will be given a specified name.
 
-Example:
+### Example:
+
+Let's create an Erlang based simple command line tool:
 
 ```
 $ rebar3 new aacli mycli
