@@ -87,6 +87,15 @@ docker-start:
 docker-stop:
 	docker stop $(PROJECT)
 
+docker-join:
+	docker exec \
+		-it $(PROJECT) \
+		erl \
+			-start_epmd false \
+			-remsh $(PROJECT)@localhost \
+			-sname $(PROJECT)-$$RANDOM \
+			-setcookie $(PROJECT)
+
 docker-shell:
 	docker exec -it $(PROJECT) sh
 
