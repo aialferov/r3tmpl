@@ -4,9 +4,6 @@
     main/1
 ]).
 
--define(NodeName, '{{name}}@localhost').
--define(NodeCookie, '{{name}}').
-
 -define(Usage,
     "Usage: {{name}} <Command>~n"
     "~n"
@@ -44,9 +41,9 @@ main(Args) ->
     end.
 
 run() ->
-    node_start(),
+    cpf_node:start(?MODULE),
     console(),
-    node_stop().
+    cpf_node:stop().
 
 console() ->
     io:format(?Greeting),
@@ -73,15 +70,6 @@ read_input(Prompt) ->
         eof -> eof;
         Data -> string:trim(Data, both, "\n")
     end.
-
-node_start() ->
-    case net_kernel:start([?NodeName, shortnames]) of
-        {ok, _Pid} -> erlang:set_cookie(node(), ?NodeCookie);
-        {error, _Reason} -> true
-    end.
-
-node_stop() ->
-    net_kernel:stop().
 
 show_usage() ->
     io:format(?Usage).
