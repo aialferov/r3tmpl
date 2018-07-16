@@ -42,7 +42,7 @@ upgrade:
 	$(REBAR) upgrade
 	$(REBAR) unlock
 
-run: epmd-run
+run:
 	$(BIN_PATH_IN)/$(PROJECT) run
 
 join:
@@ -51,9 +51,6 @@ join:
 		-remsh $(PROJECT)@localhost \
 		-sname $(PROJECT)-$$RANDOM \
 		-setcookie $(PROJECT)
-
-epmd-run:
-	epmd -daemon
 
 git-release:
 	git tag -a $(VERSION)
