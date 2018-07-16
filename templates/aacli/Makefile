@@ -26,6 +26,9 @@ clean:
 	$(REBAR) clean -a
 	$(REBAR) unlock
 
+distclean: clean
+	rm -rf $(BUILD_DIR)
+
 install:
 	mkdir -p $(BIN_PATH)
 	install -p $(BIN_PATH_IN)/$(PROJECT) $(BIN_PATH)
@@ -112,8 +115,9 @@ docker-clean:
 	rm -f $(BUILD_DIR_IMAGE)/Dockerfile
 	$(MAKE) uninstall DEST_DIR=$(BUILD_DIR_IMAGE) PREFIX=
 
-distclean: clean docker-clean
-	rm -rf $(BUILD_DIR)
+docker-distclean: docker-clean
+	docker rmi $(USER)/$(PROJECT):$(VERSION)
+	docker rmi $(USER)/$(PROJECT):edge
 
 version:
 	@echo "Version $(VERSION) (git-$(GIT_SHA))"
