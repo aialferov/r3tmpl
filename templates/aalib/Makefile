@@ -11,14 +11,6 @@ all:
 	$(REBAR) compile
 	$(REBAR) unlock
 
-shell:
-	$(REBAR) shell
-	$(REBAR) unlock
-
-upgrade:
-	$(REBAR) upgrade
-	$(REBAR) unlock
-
 check:
 	$(REBAR) eunit
 
@@ -28,6 +20,14 @@ clean:
 
 distclean: clean
 	rm -rf $(BUILD_DIR)
+
+shell:
+	$(REBAR) shell
+	$(REBAR) unlock
+
+upgrade:
+	$(REBAR) upgrade
+	$(REBAR) unlock
 
 version:
 	@echo "Version $(VERSION) (git-$(GIT_SHA))"
