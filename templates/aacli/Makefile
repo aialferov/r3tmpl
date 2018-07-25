@@ -1,4 +1,4 @@
-USER = aialferov
+USER = {{user}}
 PROJECT = {{name}}
 
 VERSION = $(shell cat src/$(PROJECT).app.src | grep vsn | cut -d\" -f2)
