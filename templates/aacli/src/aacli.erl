@@ -32,7 +32,7 @@
 -define(Version, "Version ~s (git-~s)~n").
 
 main(Args) ->
-    application:start(?MODULE),
+    application:ensure_all_started(?MODULE),
     case Args of
         ["run"] -> run();
         ["help"] -> show_usage();
