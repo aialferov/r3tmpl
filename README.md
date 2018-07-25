@@ -75,10 +75,18 @@ mycli
 2 directories, 10 files
 ```
 
+You can already build and run the tool:
+
+```
+$ cd mycli
+$ make
+$ _build/default/bin/mycli
+```
+
 ## Uninstall
 
-The [Make] "uninstall" target removes only those files supplied within this
-repository from the "~/.config/rebar3" folder and the folder itself if empty:
+The "uninstall" target removes only those files supplied within this repository
+from the "~/.config/rebar3" folder and the folder itself if empty:
 
 ```
 $ make uninstall
