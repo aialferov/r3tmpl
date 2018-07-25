@@ -19,6 +19,7 @@ $ make version   # show full version (i.e. library version plus git revision)
 $ make upgrade   # upgrade dependencies
 $ make clean     # delete built "beam" files
 $ make distclean # as "clean" but also delete "_build" folder
+$ make git       # setup git repo and make initial commit
 ```
 
 ### Dependencies

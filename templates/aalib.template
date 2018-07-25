@@ -2,7 +2,8 @@
 
 {variables, [
     {author_name, "Anton Alferov"},
-    {author_email, "anton@alferov.me"}
+    {author_email, "anton@alferov.me"},
+    {user, "aialferov"}
 ]}.
 
 {file, "aalib/rebar3", "{{name}}/rebar3"}.

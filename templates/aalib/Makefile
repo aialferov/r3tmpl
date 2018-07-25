@@ -31,3 +31,9 @@ upgrade:
 
 version:
 	@echo "Version $(VERSION) (git-$(GIT_SHA))"
+
+git:
+	git init
+	git add src/{{name}}* rebar* Makefile README.md
+	git commit -m "Initial commit"
+	git remote add origin git@github.com:{{user}}/{{name}}
