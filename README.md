@@ -2,7 +2,7 @@
 
 [![License: MIT][MIT badge]][MIT]
 
-Provides [Rebar3 Templates] for creating Erlang based project structures.
+Provides [Rebar3 Templates] for creating [Erlang] based project structures.
 
 ## Install
 
@@ -20,7 +20,8 @@ $ make install
 
 ## Usage
 
-[Rebar3] is obviously needed to use templates. Download and install:
+Assuming you have Erlang already installed, [Rebar3] is also obviously needed to
+use templates. Download and install:
 
 ```
 $ wget https://s3.amazonaws.com/rebar3/rebar3
@@ -101,9 +102,10 @@ $ rmdir -p ~/.config/rebar3/templates
 
 <!-- Links -->
 [MIT]: https://opensource.org/licenses/MIT
+[Make]: https://www.gnu.org/software/make
+[Erlang]: http://erlang.org
 [Rebar3]: https://www.rebar3.org
 [Rebar3 Templates]: https://www.rebar3.org/docs/using-templates
-[Make]: https://www.gnu.org/software/make
 
 <!-- Badges -->
 [MIT badge]: https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
