@@ -75,6 +75,22 @@ mycli
 2 directories, 10 files
 ```
 
+## Uninstall
+
+The [Make] "uninstall" target removes only those files supplied within this
+repository from the "~/.config/rebar3" folder and the folder itself if empty:
+
+```
+$ make uninstall
+```
+
+To remove the templates manually:
+
+```
+$ rm -rf ~/.config/rebar3/templates/aa{cli,lib}*
+$ rmdir -p ~/.config/rebar3/templates
+```
+
 <!-- Links -->
 [MIT]: https://opensource.org/licenses/MIT
 [Rebar3]: https://www.rebar3.org
