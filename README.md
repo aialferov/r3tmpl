@@ -2,7 +2,7 @@
 
 [![License: MIT][MIT badge]][MIT]
 
-Provides [Rebar3 Templates] for creating Erlang bases project structures.
+Provides [Rebar3 Templates] for creating Erlang based project structures.
 
 ## Install
 
@@ -12,7 +12,7 @@ Either clone this repository directly to the Rebar3 Templates folder:
 $ git clone https://github.com/aialferov/r3tmpl ~/.config/rebar3
 ```
 
-or use make to install (but still need to clone to somewhere):
+or use [Make] to install (but still need to clone to somewhere):
 
 ```
 $ make install
@@ -20,7 +20,7 @@ $ make install
 
 ## Usage
 
-[Rebar3] obviously is needed to use templates. Download and install:
+[Rebar3] is obviously needed to use templates. Download and install:
 
 ```
 $ wget https://s3.amazonaws.com/rebar3/rebar3
@@ -35,8 +35,8 @@ $ rebar3 new <Type> <Name>
 
 The following types are supported:
 
-- aalib — A library template
-- aacli — A command line tool template
+- aalib — library template
+- aacli — command line tool template.
 
 A project will be given a specified name.
 
@@ -79,6 +79,7 @@ mycli
 [MIT]: https://opensource.org/licenses/MIT
 [Rebar3]: https://www.rebar3.org
 [Rebar3 Templates]: https://www.rebar3.org/docs/using-templates
+[Make]: https://www.gnu.org/software/make
 
 <!-- Badges -->
 [MIT badge]: https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
