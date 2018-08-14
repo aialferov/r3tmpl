@@ -4,6 +4,19 @@
 
 Provides [Rebar3 Templates] for creating [Erlang] based project structures.
 
+## Try
+
+If you prefer to try it without installing localy, you can use [Docker]
+container (Docker should be installed):
+
+```
+$ docker run --rm -it aialferov/r3tmpl
+```
+
+To learn more about the container see its [Dockerfile].
+
+Proceed to the [Usage] section if you wish to skip local installation.
+
 ## Install
 
 Either clone this repository directly to the Rebar3 Templates folder:
@@ -18,8 +31,6 @@ or use [Make] to install (but still need to clone to somewhere):
 $ make install
 ```
 
-## Usage
-
 Assuming you have Erlang already installed, [Rebar3] is also obviously needed to
 use templates. Download and install:
 
@@ -27,6 +38,8 @@ use templates. Download and install:
 $ wget https://s3.amazonaws.com/rebar3/rebar3
 $ install rebar3 /usr/local/bin
 ```
+
+## Usage
 
 To create a project skeleton from template:
 
@@ -103,9 +116,13 @@ $ rmdir -p ~/.config/rebar3/templates
 <!-- Links -->
 [MIT]: https://opensource.org/licenses/MIT
 [Make]: https://www.gnu.org/software/make
+[Docker]: https://docs.docker.com
 [Erlang]: http://erlang.org
 [Rebar3]: https://www.rebar3.org
 [Rebar3 Templates]: https://www.rebar3.org/docs/using-templates
+[Dockerfile]: Dockerfile
+
+[Usage]: #usage
 
 <!-- Badges -->
 [MIT badge]: https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
