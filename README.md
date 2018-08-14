@@ -10,10 +10,10 @@ If you prefer to try it without installing localy, you can use [Docker]
 container (Docker should be installed):
 
 ```
-$ docker run --rm -it aialferov/r3tmpl
+$ docker run --name r3tmpl --rm -it aialferov/r3tmpl
 ```
 
-To learn more about the container see its [Dockerfile].
+To learn more about the container see its image [Dockerfile].
 
 Proceed to the [Usage] section if you wish to skip local installation.
 
@@ -97,6 +97,14 @@ $ make
 $ _build/default/bin/mycli
 ```
 
+If you run inside a Docker container started the way described in the [Try]
+section, do not forget to copy the project (if you want to keep it) over your
+host machine before exiting the shell:
+
+```
+$ docker cp r3tmpl:/mycli ./
+```
+
 ## Uninstall
 
 The "uninstall" target removes only those files supplied within this repository
@@ -122,6 +130,7 @@ $ rmdir -p ~/.config/rebar3/templates
 [Rebar3 Templates]: https://www.rebar3.org/docs/using-templates
 [Dockerfile]: Dockerfile
 
+[Try]: #try
 [Usage]: #usage
 
 <!-- Badges -->
