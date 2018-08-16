@@ -16,7 +16,6 @@ check:
 
 clean:
 	$(REBAR) clean -a
-	$(REBAR) unlock
 
 distclean: clean
 	rm -rf $(BUILD_DIR)
@@ -29,11 +28,9 @@ upgrade:
 	$(REBAR) upgrade
 	$(REBAR) unlock
 
+git-release:
+	git tag -a $(VERSION)
+	git push origin $(VERSION)
+
 version:
 	@echo "Version $(VERSION) (git-$(GIT_SHA))"
-
-git:
-	git init
-	git add src/{{name}}* rebar* Makefile README.md
-	git commit -m "Initial commit"
-	git remote add origin git@github.com:{{user}}/{{name}}

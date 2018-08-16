@@ -1,7 +1,6 @@
 # {{name}}
 
-An [Erlang] based library generated with [r3tmpl].
-Documentation is in progress.
+An [Erlang] based library generated with [R3tmpl]. Documentation is in progress.
 
 ## Usage
 
@@ -12,14 +11,14 @@ Functionality documentation is in progress.
 [Make] interface is provided for operational purposes:
 
 ```
-$ make           # build
-$ make check     # run unit tests
-$ make shell     # get into an Erlang shell to invoke functions manually
-$ make version   # show full version (i.e. library version plus git revision)
-$ make upgrade   # upgrade dependencies
-$ make clean     # delete built "beam" files
-$ make distclean # as "clean" but also delete "_build" folder
-$ make git       # setup git repo and make initial commit
+$ make             # build
+$ make check       # run unit tests
+$ make clean       # delete built "beam" files
+$ make distclean   # as "clean" but also delete the "_build" folder
+$ make shell       # get into an Erlang shell to invoke functions manually
+$ make upgrade     # upgrade dependencies
+$ make version     # show full version (i.e. library version plus git revision)
+$ make git-release # create VERSION git tag and push to the git repository
 ```
 
 ### Dependencies
@@ -28,13 +27,13 @@ Edit "deps" section of [rebar.config] to add an Erlang dependency:
 
 ```
 {deps, [
-    {deplib, {git, "git://github.com/username/deplib", {tag, "master"}}}
+    {deplib, {git, "https://github.com/username/deplib", {tag, "master"}}}
 ]}.
 ```
 
 <!-- Links -->
 
 [Erlang]: http://erlang.org
-[r3tmpl]: https://github.com/aialferov/r3tmpl
+[R3tmpl]: https://github.com/aialferov/r3tmpl
 [Make]: https://www.gnu.org/software/make
 [rebar.config]: rebar.config
