@@ -11,10 +11,10 @@ Functionality documentation is in progress.
 [Make] interface is provided for operational purposes:
 
 ```
-$ make             # build
+$ make [compile]   # compile (build) the library
 $ make check       # run unit tests
 $ make clean       # delete built "beam" files
-$ make distclean   # as "clean" but also delete the "_build" folder
+$ make distclean   # delete the "_build" folder
 $ make shell       # get into an Erlang shell to invoke functions manually
 $ make upgrade     # upgrade dependencies
 $ make version     # show full version (i.e. library version plus git revision)

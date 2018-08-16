@@ -2,7 +2,7 @@
 
 -include_lib("eunit/include/eunit.hrl").
 
--define(M, {{name}}).
+-define(M, '{{name}}').
 
 main_test() ->
     ?assertEqual(ok, ?M:main([])).

@@ -5,9 +5,7 @@ GIT_SHA = $(shell git rev-parse HEAD | cut -c1-8)
 
 REBAR = $(shell which ./rebar3 || which rebar3)
 
-BUILD_DIR = _build
-
-all:
+compile:
 	$(REBAR) compile
 	$(REBAR) unlock
 
@@ -17,8 +15,8 @@ check:
 clean:
 	$(REBAR) clean -a
 
-distclean: clean
-	rm -rf $(BUILD_DIR)
+distclean:
+	rm -rf _build
 
 shell:
 	$(REBAR) shell
