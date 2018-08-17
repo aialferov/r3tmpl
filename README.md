@@ -50,59 +50,62 @@ $ rebar3 new <Type> <Name>
 The following types are supported:
 
 - aalib — library template
-- aacli — command line tool template.
+- aasvc — service executable template.
 
 A project will be given a specified name.
 
 ### Example:
 
-Let's create an Erlang based simple command line tool:
+Let's create an Erlang based simple service:
 
 ```
-$ rebar3 new aacli mycli
-===> Writing mycli/rebar3
-===> Writing mycli/rebar.config
-===> Writing mycli/Makefile
-===> Writing mycli/Dockerfile
-===> Writing mycli/README.md
-===> Writing mycli/src/mycli.erl
-===> Writing mycli/src/mycli_test.erl
-===> Writing mycli/src/mycli.app.src
-===> Writing mycli/src/mycli.app.src.script
-===> Writing mycli/priv/mycli.config
+$ rebar3 new aasvc mysvc
+===> Writing mysvc/rebar3
+===> Writing mysvc/rebar.config
+===> Writing mysvc/Makefile
+===> Writing mysvc/Dockerfile
+===> Writing mysvc/README.md
+===> Writing mysvc/src/mysvc.erl
+===> Writing mysvc/src/mysvc_test.erl
+===> Writing mysvc/src/mysvc.app.src
+===> Writing mysvc/src/mysvc.app.src.script
+===> Writing mysvc/priv/mysvc.config
 
-$ tree mycli
-mycli
+$ tree mysvc
+mysvc
 ├── Dockerfile
 ├── Makefile
 ├── README.md
 ├── priv
-│   └── mycli.config
+│   └── mysvc.config
 ├── rebar.config
 ├── rebar3
 └── src
-    ├── mycli.app.src
-    ├── mycli.app.src.script
-    ├── mycli.erl
-    └── mycli_test.erl
+    ├── mysvc.app.src
+    ├── mysvc.app.src.script
+    ├── mysvc.erl
+    └── mysvc_test.erl
 
 2 directories, 10 files
 ```
 
-You can already build and run the tool:
+You can already build and run the service:
 
 ```
-$ cd mycli
+$ cd mysvc
 $ make
-$ _build/default/bin/mycli
+$ make run
 ```
+
+The latter command executes the service binary located in "_build/default/bin"
+directory after build. You can also run it manually.
 
 If you run inside a Docker container started the way described in the [Try]
 section, do not forget to copy the project (if you want to keep it) over your
 host machine before exiting the shell:
 
 ```
-$ docker cp r3tmpl:/mycli ./
+$ docker cp r3tmpl:/mysvc ./
 ```
 
 ## Uninstall
@@ -117,7 +120,7 @@ $ make uninstall
 To remove the templates manually:
 
 ```
-$ rm -rf ~/.config/rebar3/templates/aa{cli,lib}*
+$ rm -rf ~/.config/rebar3/templates/aa{svc,lib}*
 $ rmdir -p ~/.config/rebar3/templates
 ```
 

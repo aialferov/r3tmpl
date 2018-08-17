@@ -1,0 +1,23 @@
+{description, "Service executable structure"}.
+
+{variables, [
+    {author_name, "Anton Alferov"},
+    {author_email, "anton@alferov.me"},
+    {user, "aialferov"}
+]}.
+
+{file, "aasvc/rebar3", "{{name}}/rebar3"}.
+{chmod, "{{name}}/rebar3", 8#755}.
+{template, "aasvc/rebar.config", "{{name}}/rebar.config"}.
+{template, "aasvc/Makefile", "{{name}}/Makefile"}.
+{template, "aasvc/Dockerfile", "{{name}}/Dockerfile"}.
+{template, "aasvc/README.md", "{{name}}/README.md"}.
+{template, "aasvc/src/aasvc.erl", "{{name}}/src/{{name}}.erl"}.
+{template, "aasvc/src/aasvc_test.erl", "{{name}}/src/{{name}}_test.erl"}.
+{template, "aasvc/src/aasvc.app.src", "{{name}}/src/{{name}}.app.src"}.
+{template, "aasvc/src/aasvc.app.src.script",
+           "{{name}}/src/{{name}}.app.src.script"}.
+{template, "aasvc/priv/aasvc.config", "{{name}}/priv/{{name}}.config"}.
+{file, "mk/Erlanglib.mk", "{{name}}/mk/Erlanglib.mk"}.
+{file, "mk/Erlangbin.mk", "{{name}}/mk/Erlangbin.mk"}.
+{file, "mk/Docker.mk", "{{name}}/mk/Docker.mk"}.
