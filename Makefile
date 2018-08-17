@@ -17,6 +17,10 @@ uninstall:
 	find templates -type f -exec rm "$(REBAR3_HOME)/{}" 2>/dev/null \;
 	find templates -type d -exec rmdir -p "$(REBAR3_HOME)/{}" 2>/dev/null \;
 
+git-release:
+	git tag -a $(VERSION)
+	git push origin $(VERSION)
+
 docker-build:
 	docker build . -t $(USER)/$(PROJECT):$(VERSION)
 
