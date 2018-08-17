@@ -18,3 +18,6 @@
 {template, "aacli/src/aacli.app.src.script",
            "{{name}}/src/{{name}}.app.src.script"}.
 {template, "aacli/priv/aacli.config", "{{name}}/priv/{{name}}.config"}.
+{file, "mk/Erlanglib.mk", "{{name}}/mk/Erlanglib.mk"}.
+{file, "mk/Erlangbin.mk", "{{name}}/mk/Erlangbin.mk"}.
+{file, "mk/Docker.mk", "{{name}}/mk/Docker.mk"}.

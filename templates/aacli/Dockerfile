@@ -1,10 +1,10 @@
 FROM aialferov/r3tmpl AS builder
 
 COPY . src
-RUN make -C src docker-ready PREFIX=build
+RUN make -C src docker-ready DESTDIR=/build
 
 FROM aialferov/erlang-ready:basic
 
-COPY --from=builder /build /usr
+COPY --from=builder /build /
 
-ENTRYPOINT ["/usr/bin/{{name}}"]
+ENTRYPOINT ["/usr/local/bin/{{name}}"]

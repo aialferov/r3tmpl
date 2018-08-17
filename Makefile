@@ -7,7 +7,7 @@ REBAR3_HOME = ${HOME}/.config/rebar3
 
 all:
 	@echo "Usage: make install|uninstall"
-	@echo "       make docker-<build|push|release|release-local>"
+	@echo "       make docker-<build|clean|distclean|push|release|release-local>"
 
 install:
 	find templates -type d -exec mkdir -p "$(REBAR3_HOME)/{}" \;
