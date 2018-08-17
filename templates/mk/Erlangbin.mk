@@ -35,7 +35,7 @@ erlang-clean:
 	rm -rf _build/default/erl
 
 erlang-install:
-	$(MAKE) -C _build/default/erl install PREFIX=$(PREFIX)
+	$(MAKE) -C _build/default/erl install DESTDIR=$(DESTDIR) PREFIX=$(PREFIX)
 
 docker-ready: clean compile install \
               erlang-clean erlang-compile erlang-install
