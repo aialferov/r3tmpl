@@ -1,7 +1,7 @@
 USER = aialferov
 PROJECT = r3tmpl
 
-VERSION = 0.1.0
+VERSION = 0.1.1
 
 REBAR3_HOME = ${HOME}/.config/rebar3
 
