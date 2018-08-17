@@ -50,6 +50,7 @@ $ rebar3 new <Type> <Name>
 The following types are supported:
 
 - aalib — library template
+- aacli — command line interface tool template
 - aasvc — service executable template.
 
 A project will be given a specified name.
@@ -120,7 +121,7 @@ $ make uninstall
 To remove the templates manually:
 
 ```
-$ rm -rf ~/.config/rebar3/templates/aa{svc,lib}*
+$ rm -rf ~/.config/rebar3/templates/aa{lib,cli,svc}*
 $ rmdir -p ~/.config/rebar3/templates
 ```
 
