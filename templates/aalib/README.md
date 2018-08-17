@@ -8,32 +8,13 @@ Functionality documentation is in progress.
 
 ### Operations
 
-[Make] interface is provided for operational purposes:
-
-```
-$ make [compile]   # compile (build) the library
-$ make check       # run unit tests
-$ make clean       # delete built "beam" files
-$ make distclean   # delete the "_build" folder
-$ make shell       # get into an Erlang shell to invoke functions manually
-$ make upgrade     # upgrade dependencies
-$ make version     # show full version (i.e. library version plus git revision)
-$ make git-release # create VERSION git tag and push to the git repository
-```
-
-### Dependencies
-
-Edit "deps" section of [rebar.config] to add an Erlang dependency:
-
-```
-{deps, [
-    {deplib, {git, "https://github.com/username/deplib", {tag, "master"}}}
-]}.
-```
+[Make] interface is provided for operational purposes and is based on the [Mk]
+project. Please refer the [Erlanglib.mk] makefile description for details.
 
 <!-- Links -->
 
+[Mk]: https://github.com/aialferov/mk
+[Make]: https://www.gnu.org/software/make
 [Erlang]: http://erlang.org
 [R3tmpl]: https://github.com/aialferov/r3tmpl
-[Make]: https://www.gnu.org/software/make
-[rebar.config]: rebar.config
+[Erlanglib.mk]: https://github.com/aialferov/mk#erlanglibmk
