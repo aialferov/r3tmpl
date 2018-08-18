@@ -121,7 +121,7 @@ $ make uninstall
 To remove the templates manually:
 
 ```
-$ rm -rf ~/.config/rebar3/templates/aa{lib,cli,svc}*
+$ rm -rf ~/.config/rebar3/templates/{aa{lib,cli,svc}*,mk}
 $ rmdir -p ~/.config/rebar3/templates
 ```
 
