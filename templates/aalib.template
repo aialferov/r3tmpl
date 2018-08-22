@@ -17,3 +17,4 @@
 {template, "aalib/src/aalib.app.src.script",
            "{{name}}/src/{{name}}.app.src.script"}.
 {file, "mk/Erlanglib.mk", "{{name}}/mk/Erlanglib.mk"}.
+{file, "mk/Version", "{{name}}/mk/Version"}.
