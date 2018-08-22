@@ -1,7 +1,10 @@
+REGISTRY = docker.io
 USER = aialferov
 PROJECT = r3tmpl
+VERSION = 0.5.0
 
-VERSION = 0.4.0
+IMAGE = $(REGISTRY)/$(USER)/$(PROJECT):$(VERSION)
+IMAGE_LATEST = $(REGISTRY)/$(USER)/$(PROJECT):latest
 
 REBAR3_HOME = ${HOME}/.config/rebar3
 
@@ -17,7 +20,7 @@ usage:
 	@echo "    docker-distclean"
 	@echo "    docker-push"
 	@echo "    docker-release"
-	@echo "    docker-release-local"
+	@echo "    docker-local-release"
 
 install:
 	find templates -type d -exec mkdir -p "$(REBAR3_HOME)/{}" \;
@@ -32,19 +35,19 @@ git-release:
 	git push origin $(VERSION)
 
 docker-build:
-	docker build . -t $(USER)/$(PROJECT):$(VERSION)
+	docker build . -t $(IMAGE)
 
 docker-clean:
-	docker rmi $(USER)/$(PROJECT):$(VERSION)
+	docker rmi $(IMAGE)
 
 docker-distclean: docker-clean
-	docker rmi $(USER)/$(PROJECT):latest
+	docker rmi $(IMAGE_LATEST)
 
 docker-push:
-	docker push $(USER)/$(PROJECT):$(VERSION)
+	docker push $(IMAGE)
 
-docker-release: docker-release-local
-	docker push $(USER)/$(PROJECT):latest
+docker-release: docker-local-release
+	docker push $(IMAGE_LATEST)
 
-docker-release-local:
-	docker tag $(USER)/$(PROJECT):$(VERSION) $(USER)/$(PROJECT):latest
+docker-local-release:
+	docker tag $(IMAGE) $(IMAGE_LATEST)
