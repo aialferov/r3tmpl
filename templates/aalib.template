@@ -7,9 +7,9 @@
 ]}.
 
 {file, "aalib/rebar3", "{{name}}/rebar3"}.
+{file, "aalib/Makefile", "{{name}}/Makefile"}.
 {chmod, "{{name}}/rebar3", 8#755}.
 {template, "aalib/rebar.config", "{{name}}/rebar.config"}.
-{template, "aalib/Makefile", "{{name}}/Makefile"}.
 {template, "aalib/README.md", "{{name}}/README.md"}.
 {template, "aalib/src/aalib.erl", "{{name}}/src/{{name}}.erl"}.
 {template, "aalib/src/aalib_test.erl", "{{name}}/src/{{name}}_test.erl"}.
