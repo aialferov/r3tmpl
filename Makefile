@@ -5,9 +5,19 @@ VERSION = 0.4.0
 
 REBAR3_HOME = ${HOME}/.config/rebar3
 
-all:
-	@echo "Usage: make install|uninstall"
-	@echo "       make docker-<build|clean|distclean|push|release|release-local>"
+usage:
+	@echo "Usage: make <Command>"
+	@echo
+	@echo "Commands"
+	@echo "    install"
+	@echo "    uninstall"
+	@echo "    git-release"
+	@echo "    docker-build"
+	@echo "    docker-clean"
+	@echo "    docker-distclean"
+	@echo "    docker-push"
+	@echo "    docker-release"
+	@echo "    docker-release-local"
 
 install:
 	find templates -type d -exec mkdir -p "$(REBAR3_HOME)/{}" \;
