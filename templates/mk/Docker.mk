@@ -1,8 +1,15 @@
 IMAGE = $(USER)/$(PROJECT):$(VERSION)
 IMAGE_LATEST = $(USER)/$(PROJECT):latest
 
+ifndef DOCKER_RUN_ARGS
+	DOCKER_RUN_ARGS = -it --rm --name $(PROJECT) $(DOCKER_RUN_ARGS_EXTRA)
+endif
+ifndef DOCKER_BUILD_ARGS
+	DOCKER_BUILD_ARGS = $(DOCKER_BUILD_ARGS_EXTRA) . -t $(IMAGE)
+endif
+
 docker-build:
-	docker build . -t $(IMAGE)
+	docker build $(DOCKER_BUILD_ARGS)
 
 docker-push:
 	docker push $(IMAGE)
@@ -14,21 +21,13 @@ docker-local-release:
 	docker tag $(IMAGE) $(IMAGE_LATEST)
 
 docker-run:
-	docker run \
-		--rm -it \
-		--name $(PROJECT) \
-		-v ${PWD}/priv:/etc/$(PROJECT) \
-		$(IMAGE) run
+	docker run $(DOCKER_RUN_ARGS) $(IMAGE) run
 
-docker-start:
-	docker run \
-		--rm -itd \
-		--name $(PROJECT) \
-		-v ${PWD}/priv:/etc/$(PROJECT) \
-		$(IMAGE) run
+docker-run-d:
+	docker run -d $(DOCKER_RUN_ARGS) $(IMAGE) run
 
 docker-stop:
-	docker stop $(PROJECT)
+	docker stop $(DOCKER_STOP_ARGS) $(PROJECT)
 
 docker-join:
 	docker exec \

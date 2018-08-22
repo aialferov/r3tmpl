@@ -1,4 +1,4 @@
-VERSION = $(shell cat src/$(PROJECT).app.src | grep vsn | cut -d\" -f2)
+VERSION = $(shell cat src/*.app.src | grep vsn | cut -d\" -f2)
 GIT_SHA = $(shell git rev-parse HEAD | cut -c1-8)
 
 REBAR = $(shell which ./rebar3 || which rebar3)
