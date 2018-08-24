@@ -16,7 +16,7 @@ docker-build:
 docker-push:
 	docker push $(IMAGE)
 
-docker-release: docker-release-local
+docker-release: docker-local-release docker-push
 	docker push $(IMAGE_LATEST)
 
 docker-local-release:
