@@ -1,6 +1,7 @@
 # Rebar3 Templates
 
-[![License: MIT][MIT badge]][MIT]
+[![License: MIT][MIT Badge]][MIT]
+[![GitHub Release Badge]][GitHub Releases]
 
 Provides [Rebar3 Templates] for creating [Erlang] based project structures.
 
@@ -127,6 +128,7 @@ $ rmdir -p ~/.config/rebar3/templates
 
 <!-- Links -->
 [MIT]: https://opensource.org/licenses/MIT
+[GitHub Releases]: https://github.com/aialferov/r3tmpl/releases
 [Make]: https://www.gnu.org/software/make
 [Docker]: https://docs.docker.com
 [Erlang]: http://erlang.org
@@ -138,4 +140,5 @@ $ rmdir -p ~/.config/rebar3/templates
 [Usage]: #usage
 
 <!-- Badges -->
-[MIT badge]: https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
+[MIT Badge]: https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
+[GitHub Release Badge]: https://img.shields.io/github/release/aialferov/r3tmpl/all.svg?style=flat-square
