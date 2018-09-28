@@ -14,7 +14,6 @@
 {template, "aasvc/README.md", "{{name}}/README.md"}.
 {template, "aasvc/src/aasvc.erl", "{{name}}/src/{{name}}.erl"}.
 {template, "aasvc/src/aasvc_test.erl", "{{name}}/src/{{name}}_test.erl"}.
-{template, "aasvc/src/aasvc.app.src", "{{name}}/src/{{name}}.app.src"}.
 {template, "aasvc/src/aasvc.app.src.script",
            "{{name}}/src/{{name}}.app.src.script"}.
 {template, "aasvc/priv/aasvc.config", "{{name}}/priv/{{name}}.config"}.

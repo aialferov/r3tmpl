@@ -14,7 +14,6 @@
 {template, "aacli/README.md", "{{name}}/README.md"}.
 {template, "aacli/src/aacli.erl", "{{name}}/src/{{name}}.erl"}.
 {template, "aacli/src/aacli_test.erl", "{{name}}/src/{{name}}_test.erl"}.
-{template, "aacli/src/aacli.app.src", "{{name}}/src/{{name}}.app.src"}.
 {template, "aacli/src/aacli.app.src.script",
            "{{name}}/src/{{name}}.app.src.script"}.
 {file, "mk/Erlanglib.mk", "{{name}}/mk/Erlanglib.mk"}.
