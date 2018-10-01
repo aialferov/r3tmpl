@@ -1,7 +1,7 @@
 REGISTRY = docker.io
 USER = aialferov
 PROJECT = r3tmpl
-VERSION = 0.7.0
+VERSION = 0.8.0
 
 IMAGE = $(REGISTRY)/$(USER)/$(PROJECT):$(VERSION)
 IMAGE_LATEST = $(REGISTRY)/$(USER)/$(PROJECT):latest

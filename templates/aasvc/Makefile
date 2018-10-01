@@ -1,5 +1,6 @@
 include mk/Erlangbin.mk
 include mk/Docker.mk
+include mk/Kubernetes.mk
 
 USER = {{user}}
 

@@ -20,4 +20,5 @@
 {file, "mk/Erlanglib.mk", "{{name}}/mk/Erlanglib.mk"}.
 {file, "mk/Erlangbin.mk", "{{name}}/mk/Erlangbin.mk"}.
 {file, "mk/Docker.mk", "{{name}}/mk/Docker.mk"}.
+{file, "mk/Kubernetes.mk", "{{name}}/mk/Kubernetes.mk"}.
 {file, "mk/Version", "{{name}}/mk/Version"}.
