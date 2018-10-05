@@ -69,26 +69,35 @@ $ rebar3 new aasvc mysvc
 ===> Writing mysvc/README.md
 ===> Writing mysvc/src/mysvc.erl
 ===> Writing mysvc/src/mysvc_test.erl
-===> Writing mysvc/src/mysvc.app.src
 ===> Writing mysvc/src/mysvc.app.src.script
 ===> Writing mysvc/priv/mysvc.config
+===> Writing mysvc/mk/Erlanglib.mk
+===> Writing mysvc/mk/Erlangbin.mk
+===> Writing mysvc/mk/Docker.mk
+===> Writing mysvc/mk/Kubernetes.mk
+===> Writing mysvc/mk/Version
 
 $ tree mysvc
 mysvc
 ├── Dockerfile
 ├── Makefile
 ├── README.md
+├── mk
+│   ├── Docker.mk
+│   ├── Erlangbin.mk
+│   ├── Erlanglib.mk
+│   ├── Kubernetes.mk
+│   └── Version
 ├── priv
 │   └── mysvc.config
 ├── rebar.config
 ├── rebar3
 └── src
-    ├── mysvc.app.src
     ├── mysvc.app.src.script
     ├── mysvc.erl
     └── mysvc_test.erl
 
-2 directories, 10 files
+3 directories, 14 files
 ```
 
 You can already build and run the service:
